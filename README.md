@@ -1,6 +1,6 @@
 # PokéDex Dashboard
 
-A sleek, production-ready Pokémon dashboard built with **React + TypeScript + Tailwind CSS + Vite**.
+A s Pokémon dashboard built with **React + TypeScript + Tailwind CSS + Vite**.
 
 ## Features
 
