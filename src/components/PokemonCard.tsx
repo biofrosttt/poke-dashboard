@@ -6,10 +6,10 @@ import { getTypeColor, padId } from "../utils/helpers";
 interface Props {
   pokemon: Pokemon;
   onClick?: () => void;
-  index?: number;
+  index: number;
 }
 
-const PokemonCard: React.FC<Props> = ({ pokemon, onClick, index = 0 }) => {
+const PokemonCard: React.FC<Props> = ({ pokemon, onClick }) => {
   const [shiny, setShiny] = useState(false);
   const primaryType = pokemon.types[0]?.type.name ?? "normal";
   const color = getTypeColor(primaryType);
