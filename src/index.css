@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#0a0a0f] text-white font-body;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(120, 40, 200, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(40, 100, 255, 0.06) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-2xl;
+  }
+
+  .type-pill {
+    @apply text-[10px] font-mono font-medium tracking-widest uppercase px-2.5 py-1 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px currentColor;
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,255,255,0.04) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Stat bar animation */
+.stat-bar-fill {
+  animation: barFill 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes barFill {
+  from { width: 0%; }
+  to { width: var(--target-width); }
+}
+
+/* Pokemon sprite animation */
+@keyframes pokemonFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-12px) scale(1.02); }
+}
+
+.pokemon-float {
+  animation: pokemonFloat 3s ease-in-out infinite;
+}
+
+/* Pokeball spin */
+@keyframes ballSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Card hover shimmer */
+.card-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(255,255,255,0.03) 50%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.card-shimmer:hover::before {
+  opacity: 1;
+}
+
+/* Type gradient backgrounds */
+.type-bg-fire { background: linear-gradient(135deg, #ef4444, #f97316); }
+.type-bg-water { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+.type-bg-grass { background: linear-gradient(135deg, #22c55e, #84cc16); }
+.type-bg-electric { background: linear-gradient(135deg, #eab308, #facc15); }
+.type-bg-psychic { background: linear-gradient(135deg, #ec4899, #a855f7); }
+.type-bg-ice { background: linear-gradient(135deg, #06b6d4, #a5f3fc); }
+.type-bg-dragon { background: linear-gradient(135deg, #6366f1, #7c3aed); }
+.type-bg-dark { background: linear-gradient(135deg, #374151, #111827); }
+.type-bg-fairy { background: linear-gradient(135deg, #f9a8d4, #ec4899); }
+.type-bg-fighting { background: linear-gradient(135deg, #dc2626, #7f1d1d); }
+.type-bg-poison { background: linear-gradient(135deg, #a855f7, #7c3aed); }
+.type-bg-ground { background: linear-gradient(135deg, #d97706, #92400e); }
+.type-bg-rock { background: linear-gradient(135deg, #a16207, #713f12); }
+.type-bg-bug { background: linear-gradient(135deg, #65a30d, #3f6212); }
+.type-bg-ghost { background: linear-gradient(135deg, #6d28d9, #2e1065); }
+.type-bg-steel { background: linear-gradient(135deg, #64748b, #334155); }
+.type-bg-flying { background: linear-gradient(135deg, #7dd3fc, #6366f1); }
+.type-bg-normal { background: linear-gradient(135deg, #9ca3af, #6b7280); }

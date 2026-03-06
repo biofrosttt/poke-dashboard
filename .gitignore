@@ -1,0 +1,48 @@
+# dependencies
+node_modules/
+
+# pnpm
+.pnpm-store/
+
+# build output
+dist/
+build/
+
+# environment variables
+.env
+.env.local
+.env.*.local
+
+# logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# coverage
+coverage/
+
+# Vite cache
+.vite/
+
+# temporary files
+*.tmp
+*.temp
+.cache/
+
+# testing
+playwright-report/
+test-results/
