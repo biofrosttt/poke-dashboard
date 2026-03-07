@@ -43,13 +43,6 @@ const Dashboard: React.FC = () => (
 
     {/* Main */}
     <main className="max-w-screen-xl mx-auto px-6 py-8">
-      {/* Hero text */}
-      <div className="mb-10">
-        <h2 className="font-display text-5xl md:text-7xl tracking-widest text-white/10 select-none pointer-events-none">
-          GOTTA CATCH 'EM ALL
-        </h2>
-      </div>
-
       <PokemonList />
     </main>
   </div>
